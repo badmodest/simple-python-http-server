@@ -9,7 +9,7 @@
 <h3>Simple http css server in Python (Windows/Mac/Linux)</h3>
 
 ### Screenshot
-<img src="./picture1.png" width="80%" height="80%">
+<img src="./image1.png" width="80%" height="80%">
 
 ### Command Line Arguments
 ```
