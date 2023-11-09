@@ -8,17 +8,17 @@
 
 <h3 align="left">Simple http css server in Python (Windows/Mac/Linux)</h3>
 
-
+### Command Line Arguments
 ```
 Simple HTTP Server 0.0.2
 
 USAGE:
-    app.py [OPTIONS] [--]
+    app.py [FLAG] [--]
 
 
 OPTIONS:
-        --ip <ip>                                  IP address to bind [default: 0.0.0.0]
-    -p, --port <port>                              Port number [default: 8000]
+        --ip <ip>                            IP address to build [default: 127.0.0.1]
+        --port <port>                        Port number [default: 5000]
 
 
 
