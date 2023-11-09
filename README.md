@@ -3,8 +3,11 @@
 <a name="Simple http server"></a>
 <br />
 <div>
-  <a  align="center" href="https://github.com/github_username/repo_name">
-    <img  align="center" src="./favicon.ico" alt="Logo" width="80" height="80">
+  <a align="center" href="https://github.com/github_username/repo_name">
+    <div align="center">
+  <img src="./favicon.ico" alt="Logo" width="160" height="160">
+</div>
+
   </a>
 
 <h2>Simple http css server in Python (Windows/Mac/Linux)</h3>
