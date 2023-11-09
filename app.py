@@ -51,8 +51,12 @@ def upload_file():
 
 if __name__ == '__main__':
     ip_address = '127.0.0.1' # Replace localhost ip with the desired ip to run on it by default
-    if len(sys.argv) > 1 and sys.argv[1] == '--ip':
-        ip_address = sys.argv[2]
-    app.run(host=ip_address, port=5000)
+    port = '5000' # Replace port with the desired to run on it by default
+    for i in range(1, len(sys.argv), 2):
+        if sys.argv[i] == '--ip':
+            ip_address = sys.argv[i + 1]
+        elif sys.argv[i] == '--port':
+            port = int(sys.argv[i + 1])
+    app.run(host=ip_address, port=port)
 
 
