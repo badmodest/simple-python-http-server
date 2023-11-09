@@ -1,5 +1,5 @@
 
-<a name="Simple http server></a>
+<a name="Simple http server"></a>
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
@@ -8,7 +8,7 @@
 
 <h3 align="center">Simple http css server in Python (Windows/Mac/Linux)</h3>
 ```
-Simple HTTP Server 0.0.1
+Simple HTTP Server 0.0.2
 
 USAGE:
     app.py [FLAGS] [--] 
