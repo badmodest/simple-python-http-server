@@ -10,7 +10,7 @@
 
   </a>
 
-<h2>Simple http css server in Python (Windows/Mac/Linux)</h3>
+<h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h3>
 
 ### Screenshot
 <img src="./image1.png" width="80%" height="80%">
@@ -20,7 +20,8 @@
 Simple HTTP Server 0.0.2
 
 USAGE:
-    app.py [FLAG] [--]
+Install flask with 'pip'
+In command line type 'python app.py [FLAG] [--]'
 
 
 FLAGS:
