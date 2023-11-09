@@ -56,7 +56,7 @@ if __name__ == '__main__':
         if sys.argv[i] == '--ip':
             ip_address = sys.argv[i + 1]
         elif sys.argv[i] == '--port':
-            port = int(sys.argv[i + 1])
+            port = int(sys.argv[i + 2])
     app.run(host=ip_address, port=port)
 
 
