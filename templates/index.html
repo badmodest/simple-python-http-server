@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explorer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body class="container">
+
+    <nav class="container__nav">
+        <a href="/">[Root]</a>
+        {% for folder in path.split('/') %}
+            {% if folder %}
+                /
+                <a href="{{ url_for('list_subdirectory', subpath=path.split('/')[:loop.index] | join('/') | default('')) }}">{{ folder }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+    
+    <h1 class="container__title">Folder Content:</h1>
+    <br></br>
+    <table class="container__table">
+        <thead>
+            <tr>
+                <th class="container__header">Name</th>
+                <th class="container__header">Last modified</th>
+                <th class="container__header">Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for folder in folders %}
+                <tr>
+                    <td><i class="fas fa-folder"></i> <a href="{{ url_for('list_subdirectory', subpath=path + '/' + folder[0]) }}">{{ folder[0] }}/</a></td>
+                    <td>{{ folder[1] }}</td>
+                    <td>--</td>
+                </tr>
+            {% endfor %}
+            {% for file in files %}
+                <tr>
+                    <td><i class="fas fa-file"></i> <a href="{{ url_for('download_file', filename=path + '/' + file[0]) }}">{{ file[0] }}</a></td>
+                    <td>{{ file[1] }}</td>
+                    <td>{{ file[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form id="uploadForm" action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" id="fileInput" style="display: none;">
+        <button id="uploadButton" class="add-file-button">Select file</button>
+        
+        <button type="submit" style="display: none;">Upload</button>
+    </form>
+
+    <script>
+        const uploadButton = document.getElementById('uploadButton');
+        const fileInput = document.querySelector('input[type="file"]');
+        const submitButton = document.querySelector('button[type="submit"]');
+
+        uploadButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', () => {
+            submitButton.click();
+        });
+    </script>
+</body>
+</html>

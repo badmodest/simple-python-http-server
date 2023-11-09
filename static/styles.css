@@ -1,0 +1,104 @@
+/* Replace the colors in the variables with the desired colors */
+:root {
+  --text: #111718;
+  --background: #f6f8f9;
+  --primary: #323849;
+  --secondary: #ccc8da;
+  --accent: #60577f;
+  --background_opacity: rgba(236, 238, 239, 0.7);
+  --shadow: rgba(77, 73, 73, 0.6);
+  
+}
+
+
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 16px;
+  padding: 10px 50px; 
+  margin: 10px;
+
+}
+
+
+.container__title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background_opacity);
+  color: var(--text);
+  font-size: 25px;
+  padding: 15px;
+  margin: 10px auto;
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: -10px 10px 30px var(--shadow);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.button {
+  background-color: var(--primary);
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary);
+}
+.add-file-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background_opacity);
+  color: var(--text);
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 15px;
+  box-shadow: -7px 7px 20px var(--shadow);
+  outline: none;
+  cursor: pointer; 
+}
+
+.navbar {
+  background-color: var(--background);
+  color: var(--text);
+  padding: 10px;
+}
+
+.table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.header {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--background);
+  background-color: var(--background);
+}
+
+.table tr:nth-child(even) {
+  background-color: var(--background);
+}
+
+.table tr:nth-child(odd) {
+  background-color: var(--text);
+  margin: 20px auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
