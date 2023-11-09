@@ -1,4 +1,7 @@
-/* Replace the colors in the variables with the desired colors */
+/* Replace the colors in the variables with the desired colors  */
+
+/* White theme  */
+
 :root {
   --text: #111718;
   --background: #f6f8f9;
@@ -10,6 +13,21 @@
   
 }
 
+
+
+/* Dark theme  */
+/*
+:root {
+  --text: #e7edee;
+  --background: #060809;
+  --primary: #b6bccd;
+  --secondary: #292537;
+  --accent: #8880a8;
+  --background_opacity: rgba(6, 8, 8, 0.7);
+  --shadow: rgba(216, 212, 212, 0.6);
+  
+}
+*/
 
 .container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
