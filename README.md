@@ -7,18 +7,21 @@
   </a>
 
 <h3 align="center">Simple http css server in Python (Windows/Mac/Linux)</h3>
+
+
 ```
 Simple HTTP Server 0.0.2
 
 USAGE:
-    app.py [FLAGS] [--] 
+    app.py [OPTIONS] [--]
 
-FLAGS:
-    --ip <ip>                                  IP address to bind [default: 127.0.0.0]
-    --port <port>                              Port number [default: 5000]
+OPTIONS:
+        --ip <ip>                                  IP address to bind [default: 0.0.0.0]
+    -p, --port <port>                              Port number [default: 8000]
+
+
 
 ```
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
