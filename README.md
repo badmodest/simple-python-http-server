@@ -23,7 +23,7 @@ USAGE:
     app.py [FLAG] [--]
 
 
-OPTIONS:
+FLAGS:
         --ip <ip>                            IP address to build [default: 127.0.0.1]
         --port <port>                        Port number [default: 5000]
 
