@@ -1,12 +1,12 @@
 
 <a name="Simple http server"></a>
 <br />
-<div align="center">
+<div>
   <a href="https://github.com/github_username/repo_name">
     <img src="favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="left">Simple http css server in Python (Windows/Mac/Linux)</h3>
+<h3>Simple http css server in Python (Windows/Mac/Linux)</h3>
 
 ### Command Line Arguments
 ```
