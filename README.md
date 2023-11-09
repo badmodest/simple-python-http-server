@@ -6,7 +6,7 @@
     <img src="favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
-<h3>Simple http css server in Python (Windows/Mac/Linux)</h3>
+<h3 align="left">Simple http css server in Python (Windows/Mac/Linux)</h3>
 
 
 ```
