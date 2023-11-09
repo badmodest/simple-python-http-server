@@ -50,8 +50,8 @@ def upload_file():
     return redirect(url_for('list_directory'))
 
 if __name__ == '__main__':
-    ip_address = '127.0.0.1' # Replace localhost ip with the desired ip to run on it by default
-    port = '5000' # Replace port with the desired to run on it by default
+    ip_address = '127.0.0.1'                # Replace localhost ip with the desired ip to run on it by default
+    port = '5000'                           # Replace port with the desired to run on it by default
     for i in range(1, len(sys.argv), 2):
         if sys.argv[i] == '--ip':
             ip_address = sys.argv[i + 1]
