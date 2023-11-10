@@ -21,7 +21,7 @@
 <div align="center">
 <img  src="assets/image2.png" width="75%" height="75%">
 <details>
-  <summary>Android Example</summary>
+  <summary>Android deployment example</summary>
 
 <img src="assets/android1.jpg" width="25%" height="35%">
 <img src="assets/android2.jpg" width="25%" height="35%">
