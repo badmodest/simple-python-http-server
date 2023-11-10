@@ -4,10 +4,11 @@
 <br />
 <div>
     <div align="center">
-  <img src="./favicon.ico" alt="Logo" width="160" height="160" href="[h](https://badmodest.github.io/)">
-      <h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h2>
+  <img src="./favicon.ico" alt="Logo" width="100" height="100" href="[h](https://badmodest.github.io/)">
+      
 </div>
 
+### Simple http css server in Python (Windows/Mac/Linux/Android)
 
 
 
@@ -17,15 +18,16 @@
 -  Ability to easily change page colors to suit your needs in css variables 
 
 ## Screenshot
-<img src="assets/image2.png" width="75%" height="75%">
+<div align="center">
+<img  src="assets/image2.png" width="75%" height="75%">
 <details>
-  <summary>Android Example</summary>
+  <summary>Android deployment example</summary>
 
 <img src="assets/android1.jpg" width="25%" height="35%">
 <img src="assets/android2.jpg" width="25%" height="35%">
 
 </details>
-
+</div>
 
 ## Command Line Arguments
 ```
@@ -55,7 +57,12 @@ FLAGS:
 - [ ] Toggle theme
 - [ ] Improve basic formatting and positioning of information on the page
 
-      
+> [!WARNING]
+> Right now, I don't recommend deploying on machines with a public external IP, as there is no data protection and a malicious user can access it.
+
+
+
+
 [Back to Top](#readme-top)
 
 
