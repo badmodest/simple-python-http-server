@@ -19,7 +19,7 @@
 
 ## Screenshot
 <div align="center">
-<img  src="assets/image2.png" width="75%" height="75%">
+<img  src="assets/image3.png" width="75%" height="75%">
 <details>
   <summary>Android deployment example</summary>
 
