@@ -50,9 +50,9 @@ def upload_file():
     return redirect(url_for('list_directory'))
 
 if __name__ == '__main__':
-    ip_address = '127.0.0.1'
-    port = 5000
-    silent = False
+    ip_address = '127.0.0.1'            #Set Default to your own IP instead of localhost
+    port = 5000                         #Set Default to the desired port instead of the default port
+    silent = False                      #Set True if no logging is required by default
 
     for i in range(1, len(sys.argv), 2):
         if sys.argv[i] == '--ip':
@@ -65,7 +65,6 @@ if __name__ == '__main__':
     if not silent:
         app.run(host=ip_address, port=port)
     else:
-        # Если silent установлен в True, отключаем логгирование Flask
         import logging
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
