@@ -11,7 +11,12 @@
   </a>
 
 <h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h2>
-<h3>Ability to view / download / upload files</h3>
+
+### Basic Features 
+
+- [x] Ability to view / download / upload files
+- [x] Ability to easily change page colors to suit your needs in css variables 
+
 ### Screenshot
 <img src="./image1.png" width="80%" height="80%">
 
