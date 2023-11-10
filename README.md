@@ -47,6 +47,7 @@ FLAGS:
 ```
 ## TODO
 - [ ] Get rid of the presence of the Flask library, and deploy python capabilities
+- [ ] Ability to build into a single executable file
 - [ ] Implement cgi support
 - [ ] Ability to change sorting
 - [ ] HTTP Basic Authorization
