@@ -27,8 +27,8 @@ In command line type 'python app.py [FLAG] [--]'
 FLAGS:
         --ip <ip>                            IP address to build [default: 127.0.0.1]
         --port <port>                        Port number [default: 5000]
-
-
+        --silent           No output
+        --help
 
 ```
 
