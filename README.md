@@ -4,10 +4,11 @@
 <br />
 <div>
     <div align="center">
-  <img src="./favicon.ico" alt="Logo" width="160" height="160" href="[h](https://badmodest.github.io/)">
-      <h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h2>
+  <img src="./favicon.ico" alt="Logo" width="100" height="100" href="[h](https://badmodest.github.io/)">
+      
 </div>
 
+### Simple http css server in Python (Windows/Mac/Linux/Android)
 
 
 
@@ -56,7 +57,12 @@ FLAGS:
 - [ ] Toggle theme
 - [ ] Improve basic formatting and positioning of information on the page
 
-      
+> [!WARNING]
+> Right now, I don't recommend deploying on machines with a public external IP, as there is no data protection and a malicious user can access it.
+
+
+
+
 [Back to Top](#readme-top)
 
 
