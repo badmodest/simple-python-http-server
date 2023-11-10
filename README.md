@@ -18,7 +18,15 @@
 -  Ability to easily change page colors to suit your needs in css variables 
 
 ### Screenshot
-<img src="./image1.png" width="80%" height="80%">
+<img src="assets/image1.png" width="75%" height="75%">
+<details>
+  <summary>Android Example</summary>
+
+<img src="assets/android1.jpg" width="25%" height="35%">
+<img src="assets/android2.jpg" width="25%" height="35%">
+
+</details>
+
 
 ### Command Line Arguments
 ```
