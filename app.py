@@ -53,6 +53,7 @@ if __name__ == '__main__':
     ip_address = '127.0.0.1'            #Set Default to your own IP instead of localhost
     port = 5000                         #Set Default to the desired port instead of the default port
     silent = False                      #Set True if no logging is required by default
+    
 
     for i in range(1, len(sys.argv), 2):
         if sys.argv[i] == '--ip':
@@ -70,6 +71,5 @@ if __name__ == '__main__':
         log.setLevel(logging.ERROR)
         app.run(host=ip_address, port=port, use_reloader=False)
 
-    #app.run(host=ip_address, port=port)
 
 
