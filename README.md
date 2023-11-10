@@ -10,8 +10,8 @@
 
   </a>
 
-<h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h3>
-
+<h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h2>
+<h3>Ability to view / download / upload files</h3>
 ### Screenshot
 <img src="./image1.png" width="80%" height="80%">
 
