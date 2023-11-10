@@ -45,6 +45,29 @@ FLAGS:
         --help                               Guess what)
 
 ```
+## Build
+You can build the project into a standalone executable file by following these steps:
+
+```bash
+
+#get project
+git clone https://github.com/badmodest/simple-python-http-server.git
+
+pip install lief
+#installation of **lief** is not necessary, as it is installed together with cx-freeze.
+
+pip install cx-freeze
+
+python setup.py build
+#Inside setup.py, you can change the name of the output file, or add new dependencies
+
+cd ./build/exe.win-amd64-3.11/
+run PyHTTP.exe [FLAGS] [--]
+# Name of executable  may be different
+
+
+
+```
 ## TODO
 - [ ] Get rid of the presence of the Flask library, and deploy python capabilities
 - [ ] Ability to build into a single executable file
