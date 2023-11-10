@@ -31,7 +31,7 @@
 
 ## Command Line Arguments
 ```
-Simple HTTP Server 0.0.2
+Simple HTTP Server 0.0.3
 
 USAGE:
 Install flask with 'pip'
@@ -49,8 +49,7 @@ FLAGS:
 You can build the project into a standalone executable file by following these steps:
 
 ```bash
-
-#get project
+#get project if not already
 git clone https://github.com/badmodest/simple-python-http-server.git
 
 pip install lief
@@ -64,10 +63,10 @@ python setup.py build
 cd ./build/exe.win-amd64-3.11/
 run PyHTTP.exe [FLAGS] [--]
 # Name of executable  may be different
-
-
-
 ```
+> [!NOTE]
+> The build process has been tested only on Windows system, on other operating systems the process may be drastically different 
+
 ## TODO
 - [ ] Get rid of the presence of the Flask library, and deploy python capabilities
 - [ ] Ability to build into a single executable file
