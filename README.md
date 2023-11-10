@@ -14,7 +14,7 @@
 
 ## Basic Features 
 
--  Ability to view / download / upload files
+-  Ability to view / download / upload files 
 -  Ability to easily change page colors to suit your needs in css variables 
 
 ## Screenshot
@@ -69,10 +69,10 @@ run PyHTTP.exe [FLAGS] [--]
 
 ## TODO
 - [ ] Get rid of the presence of the Flask library, and deploy python capabilities
-- [ ] Ability to build into a single executable file
+- [x] Ability to build into a single executable file
 - [ ] Implement cgi support
 - [ ] Ability to change sorting
-- [ ] HTTP Basic Authorization
+- [ ] HTTP Basic Authorization https://github.com/badmodest/simple-python-http-server/issues/1
 - [ ] Upload file size limit
 - [ ] Support `TSL/SSL` 
 - [ ] Support `IPv6`
