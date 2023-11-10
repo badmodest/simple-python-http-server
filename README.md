@@ -45,6 +45,7 @@ FLAGS:
 ```
 ## TODO
 - [ ] Get rid of the presence of the Flask library, and deploy python capabilities
+- [ ] Implement cgi support
 - [ ] Ability to change sorting
 - [ ] HTTP Basic Auth
 - [ ] Upload file size limit
