@@ -47,12 +47,13 @@ FLAGS:
 - [ ] Get rid of the presence of the Flask library, and deploy python capabilities
 - [ ] Implement cgi support
 - [ ] Ability to change sorting
-- [ ] HTTP Basic Auth
+- [ ] HTTP Basic Authorization
 - [ ] Upload file size limit
 - [ ] Support `TSL/SSL` 
 - [ ] Support `IPv6`
 - [ ] Ability to disable file uploading
 - [ ] Toggle theme
+- [ ] Improve basic formatting and positioning of information on the page
 
       
 [Back to Top](#readme-top)
