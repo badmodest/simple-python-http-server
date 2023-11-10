@@ -14,8 +14,8 @@
 
 ### Basic Features 
 
-- [x] Ability to view / download / upload files
-- [x] Ability to easily change page colors to suit your needs in css variables 
+-  Ability to view / download / upload files
+-  Ability to easily change page colors to suit your needs in css variables 
 
 ### Screenshot
 <img src="./image1.png" width="80%" height="80%">
@@ -37,6 +37,7 @@ FLAGS:
 
 ```
 ## TODO
+- [ ] Get rid of the presence of the Flask library, and deploy python capabilities
 - [ ] Ability to change sorting
 - [ ] HTTP Basic Auth
 - [ ] Upload file size limit
