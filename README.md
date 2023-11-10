@@ -53,6 +53,7 @@ FLAGS:
 - [ ] Support `IPv6`
 - [ ] Ability to disable file uploading
 - [ ] Toggle theme
+- [ ] Improve basic formatting and positioning of information on the page
 
       
 [Back to Top](#readme-top)
