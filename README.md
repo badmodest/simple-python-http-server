@@ -31,7 +31,16 @@ FLAGS:
         --help                               Guess what)
 
 ```
+## TODO
+- [ ] Ability to change sorting
+- [ ] HTTP Basic Auth
+- [ ] Upload file size limit
+- [ ] Support `TSL/SSL` 
+- [ ] Support `IPv6`
+- [ ] Ability to disable file uploading
+- [ ] Toggle theme
 
+      
 [Back to Top](#readme-top)
 
 
