@@ -25,14 +25,14 @@ def get_directory_contents(path):
 def list_directory():
     current_directory = os.path.dirname(os.path.abspath(__file__))
     folders, files = get_directory_contents(current_directory)
-    return render_template('index.html', folders=folders, files=files, path="")
+    return render_template('index.html', folders=folders, files=files, path="", active_folder=current_directory)
 
 @app.route('/directory/<path:subpath>')
 def list_subdirectory(subpath):
     current_directory = os.path.dirname(os.path.abspath(__file__))
     directory_path = os.path.join(current_directory, subpath)
     folders, files = get_directory_contents(directory_path)
-    return render_template('index.html', folders=folders, files=files, path=subpath)
+    return render_template('index.html', folders=folders, files=files, path=subpath, active_folder=current_directory)
 
 @app.route('/download/<path:filename>')
 def download_file(filename):
@@ -50,14 +50,27 @@ def upload_file():
     return redirect(url_for('list_directory'))
 
 if __name__ == '__main__':
-    ip_address = '127.0.0.1'                # Replace localhost ip with the desired ip to run on it by default
-    port = '5000'                           # Replace port with the desired to run on it by default
+    ip_address = '127.0.0.1'
+    port = 5000
+    silent = False
+
     for i in range(1, len(sys.argv), 2):
         if sys.argv[i] == '--ip':
             ip_address = sys.argv[i + 1]
         elif sys.argv[i] == '--port':
-            port = int(sys.argv[i + 2])
-    
-    app.run(host=ip_address, port=port)
+            port = int(sys.argv[i + 1])
+        elif sys.argv[i] == '--silent':
+            silent = True
+
+    if not silent:
+        app.run(host=ip_address, port=port)
+    else:
+        # Если silent установлен в True, отключаем логгирование Flask
+        import logging
+        log = logging.getLogger('werkzeug')
+        log.setLevel(logging.ERROR)
+        app.run(host=ip_address, port=port, use_reloader=False)
+
+    #app.run(host=ip_address, port=port)
 
 
