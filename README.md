@@ -3,21 +3,20 @@
 <a name="Simple http server"></a>
 <br />
 <div>
-  <a align="center" href="https://github.com/github_username/repo_name">
     <div align="center">
-  <img src="./favicon.ico" alt="Logo" width="160" height="160">
+  <img src="./favicon.ico" alt="Logo" width="160" height="160" href="[h](https://badmodest.github.io/)">
+      <h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h2>
 </div>
 
-  </a>
 
-<h2>Simple http css server in Python (Windows/Mac/Linux/Android)</h2>
 
-### Basic Features 
+
+## Basic Features 
 
 -  Ability to view / download / upload files
 -  Ability to easily change page colors to suit your needs in css variables 
 
-### Screenshot
+## Screenshot
 <img src="assets/image1.png" width="75%" height="75%">
 <details>
   <summary>Android Example</summary>
@@ -28,7 +27,7 @@
 </details>
 
 
-### Command Line Arguments
+## Command Line Arguments
 ```
 Simple HTTP Server 0.0.2
 
