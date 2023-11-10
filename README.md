@@ -17,7 +17,7 @@
 -  Ability to easily change page colors to suit your needs in css variables 
 
 ## Screenshot
-<img src="assets/image1.png" width="75%" height="75%">
+<img src="assets/image2.png" width="75%" height="75%">
 <details>
   <summary>Android Example</summary>
 
