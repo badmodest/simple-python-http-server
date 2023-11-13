@@ -1,5 +1,6 @@
-div{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body{
+  background-color: #232323;  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   .login-box {
     position: absolute;
@@ -49,31 +50,32 @@ div{
     font-size: 12px;
   }
   
-  .login-box form a {
+  .login-box form button {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #ffffff;
+    color: #000000;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+    border-radius: 10px;
   }
   
-  .login-box a:hover {
+  .login-box button:hover {
     background: #5638b2;
-    color: #fff;
-    border-radius: 5px;
+    color: #e9e9e9;
+    border-radius: 15px;
     box-shadow: 0 0 5px #5638b2,
                 0 0 25px #5638b2,
                 0 0 50px #5638b2,
                 0 0 100px #5638b2;
   }
   
-  .login-box a span {
+  .login-box button span {
     position: absolute;
     display: block;
   }
@@ -88,7 +90,7 @@ div{
     }
   }
   
-  .login-box a span:nth-child(1) {
+  .login-box button span:nth-child(1) {
     bottom: 2px;
     left: -100%;
     width: 100%;

@@ -2,10 +2,9 @@ import os
 import sys
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session
 from datetime import datetime
-
+from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = '2kd8shcD1#@*&$!Qhc02k4ne17'
-
 
 def get_directory_contents(path):
     items = os.listdir(path)
@@ -25,12 +24,18 @@ def get_directory_contents(path):
 
 @app.route('/')
 def list_directory():
+    if 'username' not in session:
+        return redirect(url_for('auth'))
+
     current_directory = os.path.dirname(os.path.abspath(__file__))
     folders, files = get_directory_contents(current_directory)
     return render_template('index.html', folders=folders, files=files, path="", active_folder=current_directory)
 
 @app.route('/directory/<path:subpath>')
 def list_subdirectory(subpath):
+    if 'username' not in session:
+        return redirect(url_for('auth'))
+
     current_directory = os.path.dirname(os.path.abspath(__file__))
     directory_path = os.path.join(current_directory, subpath)
     folders, files = get_directory_contents(directory_path)
@@ -38,12 +43,18 @@ def list_subdirectory(subpath):
 
 @app.route('/download/<path:filename>')
 def download_file(filename):
+    if 'username' not in session:
+        return redirect(url_for('auth'))
+
     current_directory = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_directory, filename)
     return send_from_directory(current_directory, filename, as_attachment=True)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    if 'username' not in session:
+        return redirect(url_for('auth'))
+
     if 'file' in request.files:
         uploaded_file = request.files['file']
         if uploaded_file.filename != '':
@@ -53,30 +64,36 @@ def upload_file():
 
 @app.route('/index')
 def index():
+    if 'username' not in session:
+        return redirect(url_for('auth'))
+
     current_directory = os.path.dirname(os.path.abspath(__file__))
     folders, files = get_directory_contents(current_directory)
     return render_template('index.html', folders=folders, files=files, path="", active_folder=current_directory)
 
 users = {
-    'user1': 'password1',
-    'user2': 'password2',
+    'admin': generate_password_hash('admin'),
+    'admin': generate_password_hash('passwd'),
 }
 
 @app.route('/auth', methods=['GET', 'POST'])
 def auth():
-    render_template('auth.html')
+    if 'username' in session:
+        return redirect(url_for('index'))
+
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
 
-        if username in users and users[username] == password:
-            session['username'] = username  
+        if username in users and check_password_hash(users[username], password):
+            session['username'] = username
             flash('Вы успешно вошли', 'success')
             return redirect(url_for('index'))
         else:
             flash('Неправильный логин или пароль', 'error')
 
     return render_template('auth.html')
+
 
 if __name__ == '__main__':
     ip_address = '127.0.0.1'
@@ -90,14 +107,5 @@ if __name__ == '__main__':
             port = int(sys.argv[i + 1])
         elif sys.argv[i] == '--silent':
             silent = True
-        elif sys.argv[i] == '--auth':
-            app.run(host=ip_address, port=port, use_reloader=False)
-            sys.exit()
 
-    if not silent:
-        app.run(host=ip_address, port=port)
-    else:
-        import logging
-        log = logging.getLogger('werkzeug')
-        log.setLevel(logging.ERROR)
-        app.run(host=ip_address, port=port, use_reloader=False)
+    app.run(host=ip_address, port=port, use_reloader=not silent)
