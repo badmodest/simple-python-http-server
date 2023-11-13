@@ -3,6 +3,8 @@ import sys
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
+import argparse
+
 app = Flask(__name__)
 app.secret_key = '2kd8shcD1#@*&$!Qhc02k4ne17'
 
@@ -72,7 +74,6 @@ def index():
     return render_template('index.html', folders=folders, files=files, path="", active_folder=current_directory)
 
 users = {
-    'admin': generate_password_hash('admin'),
     'admin': generate_password_hash('passwd'),
 }
 
@@ -94,18 +95,18 @@ def auth():
 
     return render_template('auth.html')
 
-
 if __name__ == '__main__':
-    ip_address = '127.0.0.1'
-    port = 5000
-    silent = False
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--ip', default='127.0.0.1', help='Specify the IP address')
+    parser.add_argument('--port', type=int, default=5000, help='Specify the port')
+    parser.add_argument('--silent', action='store_true', help='Run in silent mode')
+    parser.add_argument('--auth', action='store_true', help='Enable authentication')
 
-    for i in range(1, len(sys.argv), 2):
-        if sys.argv[i] == '--ip':
-            ip_address = sys.argv[i + 1]
-        elif sys.argv[i] == '--port':
-            port = int(sys.argv[i + 1])
-        elif sys.argv[i] == '--silent':
-            silent = True
+    args = parser.parse_args()
 
-    app.run(host=ip_address, port=port, use_reloader=not silent)
+    if args.auth:
+        app.run(host=args.ip, port=args.port, use_reloader=not args.silent)
+    else:
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        folders, files = get_directory_contents(current_directory)
+        app.run(host=args.ip, port=args.port, use_reloader=not args.silent)
