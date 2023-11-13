@@ -1,9 +1,11 @@
 import os
 import sys
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = '2kd8shcD1#@*&$!Qhc02k4ne17'
+
 
 def get_directory_contents(path):
     items = os.listdir(path)
@@ -49,11 +51,37 @@ def upload_file():
             uploaded_file.save(file_path)
     return redirect(url_for('list_directory'))
 
+@app.route('/index')
+def index():
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    folders, files = get_directory_contents(current_directory)
+    return render_template('index.html', folders=folders, files=files, path="", active_folder=current_directory)
+
+users = {
+    'user1': 'password1',
+    'user2': 'password2',
+}
+
+@app.route('/auth', methods=['GET', 'POST'])
+def auth():
+    render_template('auth.html')
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        if username in users and users[username] == password:
+            session['username'] = username  
+            flash('Вы успешно вошли', 'success')
+            return redirect(url_for('index'))
+        else:
+            flash('Неправильный логин или пароль', 'error')
+
+    return render_template('auth.html')
+
 if __name__ == '__main__':
-    ip_address = '127.0.0.1'            #Set Default to your own IP instead of localhost
-    port = 5000                         #Set Default to the desired port instead of the default port
-    silent = False                      #Set True if no logging is required by default
-    
+    ip_address = '127.0.0.1'
+    port = 5000
+    silent = False
 
     for i in range(1, len(sys.argv), 2):
         if sys.argv[i] == '--ip':
@@ -62,6 +90,9 @@ if __name__ == '__main__':
             port = int(sys.argv[i + 1])
         elif sys.argv[i] == '--silent':
             silent = True
+        elif sys.argv[i] == '--auth':
+            app.run(host=ip_address, port=port, use_reloader=False)
+            sys.exit()
 
     if not silent:
         app.run(host=ip_address, port=port)
@@ -70,6 +101,3 @@ if __name__ == '__main__':
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
         app.run(host=ip_address, port=port, use_reloader=False)
-
-
-
